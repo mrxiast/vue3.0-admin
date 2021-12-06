@@ -1,0 +1,55 @@
+.top-box{
+  display: flex;
+  justify-content: space-around;
+  .box-item{
+    width: 450px;
+    height:180px;
+    display: flex;
+    align-items: center;
+    .logo{
+      width: 150px;
+      height: 150px;
+    }
+    .content{
+      margin-left:20px;
+      .name{
+        color:#409eff
+      }
+      div{
+        margin:15px 0;
+      }
+    }
+    .content-column{
+      height:180px;
+      display: flex;
+      flex-wrap: wrap;
+      align-content: space-around;
+      .column{
+        display: flex;
+        width: 100%;
+        .column-title{
+          text-align: right;
+        }
+        div{
+          width:30%;
+          margin:0 1%;
+        }
+      }
+    }
+  }
+}
+.table-box{
+  margin-top:20px;
+}
+.table-title{
+  margin-bottom: 20px;
+  .title{
+    color:#409eff;
+  }
+  .update-title{
+    margin-left:20px;
+  }
+  span{
+    color:#bbb;
+  }
+}

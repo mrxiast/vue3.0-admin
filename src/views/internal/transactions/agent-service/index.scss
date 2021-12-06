@@ -1,0 +1,33 @@
+.container-box{
+  padding:20px;
+  .title{
+    margin-bottom:20px;
+  }
+  .card-box{
+    padding:20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    .item{
+      width: 300px;
+      height: 150px;
+      cursor: pointer;
+      .item-title{
+        text-align: center;
+        padding-bottom:20px;
+      }
+      .item-content{
+        div{
+          margin:10px 0;
+        }
+        .content-item{
+          display: flex;
+          
+          .item-label{
+            width:130px;
+          }
+        }
+      }
+    }
+  }
+}

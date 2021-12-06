@@ -1,0 +1,13 @@
+.idea
+node_modules
+.DS_Store
+dist
+dist-ssr
+*.local
+yarn.lock
+.history
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*

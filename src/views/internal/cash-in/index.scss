@@ -1,0 +1,48 @@
+.container-box{
+  padding:20px;
+  .title{
+    margin-bottom:10px;
+  }
+  .card-box{
+    
+    .box-item{
+      width:700px;
+      display: flex;
+      align-items: center;
+      margin:20px 0;
+      .item-label{
+        width: 200px;
+        text-align: right;
+        padding-right:20px;
+      }
+      .item-box{
+        width: 500px;
+      }
+    }
+  }
+}
+.avatar-uploader .el-upload {
+  border: 1px dashed #d9d9d9 !important;
+  border-radius: 6px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+.avatar-uploader .el-upload:hover {
+  border-color: #409eff;
+}
+.avatar-uploader-icon {
+  font-size: 28px;
+  color: #8c939d;
+  width: 178px;
+  height: 178px;
+  text-align: center;
+}
+.avatar-uploader-icon svg {
+  margin-top: 74px; /* (178px - 28px) / 2 - 1px */
+}
+.avatar {
+  width: 178px;
+  height: 178px;
+  display: block;
+}

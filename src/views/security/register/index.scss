@@ -1,0 +1,26 @@
+.base-container{
+  display: flex;
+  justify-content: center;
+  padding:80px 0;
+  .card-box{
+    width: 500px;
+    .account-box{
+      display: flex;
+      justify-content: center;
+    }
+    .inner-box{
+      padding:0 20px 20px 20px;
+      .logo-box{
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+  .otp-box{
+    margin-top:10px;
+  }
+}
+.btn{
+  display: flex;
+  justify-content: center;
+}

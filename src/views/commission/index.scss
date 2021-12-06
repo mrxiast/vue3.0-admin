@@ -1,0 +1,47 @@
+.title{
+  margin:20px;
+}
+.tab-item{
+  .search-box{
+    margin:10px 0;
+    display: flex;
+    align-items: center;
+    .search-item{
+      margin:0 20px;
+      .search-title{
+        margin-bottom:10px;
+      }
+    }
+    .btn-style{
+      margin: 0 20px;
+      .btn{
+        height: 35px;
+        width: 100px;
+      }
+    }
+  }
+}
+.list{
+  margin-top:40px;
+}
+.es-style{
+  cursor: pointer;
+}
+.dropdown-box{
+  height: 40px; 
+  display: flex; 
+  align-items: center
+}
+.tab-box{
+  padding:10px 20px;
+}
+.select-box{
+  margin: 20px 0;
+  .isSelect{
+    color: #409eff;
+  }
+  span{
+    cursor: pointer;
+    margin:0 20px;
+  }
+}

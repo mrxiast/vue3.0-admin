@@ -1,0 +1,53 @@
+.container-box{
+  padding:20px;
+  .title{
+    margin-bottom:20px;
+  }
+  .card-box{
+    .top-box{
+      display: flex;
+      justify-content: space-between;
+      .top-left{
+
+        span{
+          margin:0 10px;
+          cursor: pointer;
+        }
+        .isSelect{
+          color:#409eff
+        }
+      }
+    }
+    .notice-box{
+      margin-top:20px;
+      .notice-item{
+        padding:0 100px;
+        height: 100px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        div{
+          margin:20px 0;
+        }
+        .notice-title{
+          font-weight: 700;
+        }
+      }
+    }
+  }
+  .pagination-box{
+    display: flex;
+    justify-content: flex-end;
+    margin-top:20px;
+  }
+  .form-item{
+    .form-label{
+      margin:20px  0 10px 0;
+    }
+  }
+  .confirm-btn{
+    display: flex;
+    justify-content: center;
+    margin-top:20px;
+  }
+}

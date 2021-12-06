@@ -1,0 +1,42 @@
+.container-box{
+  padding:20px;
+  .title{
+    margin-bottom:20px;
+  }
+  .card-box{
+    .box-top{
+      border:1px solid #eee;
+      padding:20px 100px;
+      .top-item{
+        display: flex;
+        margin:10px 0;
+        .item-label{
+          width: 200px;
+          text-align: right;
+          margin-right: 20px;
+        }
+      }
+    }
+    .box-body{
+      border-left:1px solid #eee;
+      border-top:1px solid #eee;
+      border-right:1px solid #eee;
+      margin-top: 20px;;
+      .item{
+        display: flex;
+        height: 40px;
+        text-align: center;
+        line-height: 40px;
+        .item-label{
+          width: 20%;
+          border-bottom: 1px solid #eee;
+          border-right: 1px solid #eee;
+        }
+        .item-value{
+          border-bottom: 1px solid #eee;
+          width: 80%;
+        }
+      }
+    }
+  }
+}
