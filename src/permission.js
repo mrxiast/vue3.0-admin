@@ -55,6 +55,7 @@ router.beforeEach(async (to, from, next) => {
           // set the replace: true, so the navigation will not leave a history record
           next({ ...to, replace: true })
         } catch (err) {
+          console.log(err)
           await store.dispatch('user/resetToken')
           next(`/login?redirect=${to.path}`)
           if (settings.isNeedNprogress) NProgress.done()

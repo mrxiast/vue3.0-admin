@@ -1,26 +1,15 @@
 <template>
   <div class="container">
-    <h2 class="page-title">Bill Payments</h2>
+    <h2 class="page-title">Commission</h2>
     <div class="top-box">
       <el-card>
         <div class="filtter-box">
           <div class="input-box">
-            <el-input v-model="transactionId" placeholder="Search Transaction ID" />
+            <el-input v-model="mobileNumber" placeholder="Search Mobile Number" />
           </div>
-          <div class="select-box">
-            <el-date-picker
-              v-model="dateTime"
-              type="daterange"
-              unlink-panels
-              range-separator="To"
-              start-placeholder="Start date"
-              end-placeholder="End date"
-              :shortcuts="shortcuts"
-            ></el-date-picker>
-          </div>
+
           <div class="btn">
             <el-button type="primary" @click="search">Search</el-button>
-            <el-button type="warning" @click="exportFile">Export</el-button>
           </div>
         </div>
       </el-card>
@@ -28,23 +17,21 @@
     <div class="table-box">
       <el-card>
         <el-table v-loading="listLoading" :data="tableList" element-loading-text="Loading" border highlight-current-row>
-          <el-table-column label="Transaction ID" align="center" width="150px">
+          <el-table-column label="Mobile number" align="center" width="150px">
             <template #default="scope">
               <el-link type="primary">
                 <router-link to="/branch/detail">{{ scope.row.branchId }}</router-link>
               </el-link>
             </template>
           </el-table-column>
-          <el-table-column prop="name" label="Transaction Date" align="center" />
-          <el-table-column prop="mobile" label="User Type" align="center" />
+          <el-table-column prop="name" label="User Type" align="center" />
           <el-table-column prop="mobile" label="User Name" align="center" />
-          <el-table-column prop="agentId" label="Request Amount" align="center" />
-          <el-table-column align="center" label="Service Charge"></el-table-column>
-          <el-table-column prop="createdAt" label="Total Amount" align="center" />
-          <el-table-column align="center" label="Channel Name"></el-table-column>
-          <el-table-column align="center" label="Biller Catagory"></el-table-column>
-          <el-table-column align="center" label="Biller name"></el-table-column>
-          <el-table-column align="center" label="Channel Cost"></el-table-column>
+          <el-table-column prop="agentId" label="Transaction ID" align="center" />
+          <el-table-column prop="agentId" label="Transaction Date" align="center" />
+          <el-table-column align="center" label="Commission Amount"></el-table-column>
+          <el-table-column align="center" label="Commission Type"></el-table-column>
+          <el-table-column align="center" label="Currency"></el-table-column>
+          <el-table-column align="center" label="Status"></el-table-column>
         </el-table>
         <Pagination :total="total" :page="pageNum" :limit="pageSize" @pagination="changePageFetching" />
       </el-card>
@@ -54,19 +41,21 @@
 
 <script>
 import { defineComponent, reactive, toRefs } from 'vue'
+
 import Pagination from '@/views/components/pagination'
+import { useRouter } from 'vue-router'
 
 export default defineComponent({
   components: { Pagination },
   setup(props, context) {
     const state = reactive({
-      tableList: [],
-      transactionId: '',
-      dateTime: '',
+      tableList: [{ name: '01' }],
       pageNum: 1,
       pageSize: 10,
-      total: 0
+      total: 0,
+      mobileNumber: ''
     })
+    const $router = useRouter()
     const search = () => {}
     const exportFile = () => {}
     const getList = () => {}

@@ -58,69 +58,211 @@ export const constantRoutes = [
     name: 'Trancactions',
     meta: {
       title: 'Trancactions',
-      icon: 'link'
+      icon: 'transaction'
     },
     children: [
       {
         path: 'e-wallet',
         component: () => import('@/views/transactions/e-wallet'), // Parent router-view
         name: 'E-wallet',
-        meta: { title: 'E-wallet' },
+        meta: { title: 'E-wallet', icon: 'wallet' },
         children: [
           {
             path: 'scan-to-pay',
             component: () => import('@/views/transactions/e-wallet/scan-to-pay'),
             name: 'ScanToPay',
-            meta: { title: 'scan to pay' }
+            meta: { title: 'Scan to Pay' }
           },
           {
             path: 'transfer',
             component: () => import('@/views/transactions/e-wallet/transfer'),
             name: 'Transfer',
-            meta: { title: 'transfer' }
+            meta: { title: 'Transfer' }
           },
           {
             path: 'ang-pao',
             component: () => import('@/views/transactions/e-wallet/ang-pao'),
             name: 'AngPao',
             meta: { title: 'Ang Pao' }
-          },
-          {
-            path: 'menu1-2',
-            component: () => import('@/views/nested/menu1/menu1-2'),
-            name: 'Menu1-2',
-            meta: { title: 'Menu1-2' },
-            children: [
-              {
-                path: 'menu1-2-1',
-                component: () => import('@/views/nested/menu1/menu1-2/menu1-2-1'),
-                name: 'Menu1-2-1',
-                meta: { title: 'Menu1-2-1' }
-              },
-              {
-                path: 'menu1-2-2',
-                component: () => import('@/views/nested/menu1/menu1-2/menu1-2-2'),
-                name: 'Menu1-2-2',
-                meta: { title: 'Menu1-2-2' }
-              }
-            ]
-          },
-          {
-            path: 'menu1-3',
-            component: () => import('@/views/nested/menu1/menu1-3'),
-            name: 'Menu1-3',
-            meta: { title: 'Menu1-3' }
           }
         ]
       },
       {
-        path: 'menu2',
-        component: () => import('@/views/nested/menu2/index'),
-        name: 'Menu2',
-        meta: { title: 'menu2' }
+        path: 'cash-in',
+        component: () => import('@/views/transactions/cash-in'), // Parent router-view
+        name: 'CasnIn',
+        meta: { title: 'Cash In', icon: 'cash-in' },
+        children: [
+          {
+            path: 'customer-cash-in',
+            component: () => import('@/views/transactions/cash-in/customer-cash-in'),
+            name: 'CustomerCashIn',
+            meta: { title: 'Customer Cash In' }
+          },
+          {
+            hidden: true,
+            path: 'customer-cash-in-detail/:id',
+            name: 'CustomerCashInDetail',
+            component: () => import('@/views/transactions/cash-in/customer-cash-in/cash-in-detail'),
+            meta: { title: 'Customer Cash In Detail' }
+          },
+          {
+            path: 'agent-cash-in',
+            component: () => import('@/views/transactions/cash-in/agent-cash-in'),
+            name: 'AgentCashIn',
+            meta: { title: 'Agent Cash In' }
+          },
+          {
+            hidden: true,
+            path: 'agent-cash-in-detail/:id',
+            name: 'AgentCashInDetail',
+            component: () => import('@/views/transactions/cash-in/agent-cash-in/cash-in-detail'),
+            meta: { title: 'Agent Cash In Detail' }
+          },
+          {
+            path: 'merchant-cash-in',
+            component: () => import('@/views/transactions/cash-in/merchant-cash-in'),
+            name: 'MerchantCashIn',
+            meta: { title: 'Merchant Cash In' }
+          },
+          {
+            hidden: true,
+            path: 'merchant-cash-in-detail/:id',
+            name: 'MerchantCashInDetail',
+            component: () => import('@/views/transactions/cash-in/merchant-cash-in/cash-in-detail'),
+            meta: { title: 'Merchant Cash In Detail' }
+          }
+        ]
+      },
+      {
+        path: 'cash-out',
+        component: () => import('@/views/transactions/cash-out'), // Parent router-view
+        name: 'CasnOut',
+        meta: { title: 'Cash Out', icon: 'cash-out' },
+        children: [
+          {
+            path: 'customer-cash-out',
+            component: () => import('@/views/transactions/cash-out/customer-cash-out'),
+            name: 'CustomerCashOut',
+            meta: { title: 'Customer Cash Out' }
+          },
+          {
+            hidden: true,
+            path: 'customer-cash-out-detail/:id',
+            name: 'CustomerCashOutDetail',
+            component: () => import('@/views/transactions/cash-out/customer-cash-out/cash-out-detail'),
+            meta: { title: 'Customer Cash Out Detail' }
+          },
+
+          {
+            path: 'agent-cash-out',
+            component: () => import('@/views/transactions/cash-out/agent-cash-out'),
+            name: 'AgentCashOut',
+            meta: { title: 'Agent Cash Out' }
+          },
+          {
+            hidden: true,
+            path: 'agent-cash-out-detail/:id',
+            name: 'AgentCashOutDetail',
+            component: () => import('@/views/transactions/cash-out/agent-cash-out/cash-out-detail'),
+            meta: { title: 'Agent Cash Out Detail' }
+          },
+          {
+            path: 'merchant-cash-out',
+            component: () => import('@/views/transactions/cash-out/merchant-cash-out'),
+            name: 'MerchantCashOut',
+            meta: { title: 'Merchant Cash Out' }
+          },
+          {
+            hidden: true,
+            path: 'merchant-cash-out-detail/:id',
+            name: 'MerchantCashOutDetail',
+            component: () => import('@/views/transactions/cash-out/merchant-cash-out/cash-out-detail'),
+            meta: { title: 'Merchant Cash Out Detail' }
+          }
+        ]
+      },
+      {
+        path: '/bill-payments',
+        component: () => import('@/views/transactions/bill-payments'),
+        meta: { title: 'BillPayments', icon: 'bill-payment' }
+      },
+      {
+        path: '/system',
+        name: 'System',
+        component: () => import('@/views/transactions/bill-payments'),
+        meta: { title: 'System', icon: 'bill-payment' }
+      },
+      {
+        path: '/sales',
+        name: 'Sales',
+        component: () => import('@/views/transactions/sales'),
+        meta: { title: 'Sales', icon: 'sales' }
+      },
+      {
+        hidden: true,
+        path: '/sales/sale-detail/:id',
+        name: 'SaleDetail',
+        component: () => import('@/views/transactions/sales/sale-detail'),
+        meta: { title: 'Sale Detail' }
       }
     ]
   },
+  {
+    path: '/refund',
+    component: Layout,
+    redirect: '/refund',
+    children: [
+      {
+        path: '/refund',
+        name: 'Refund',
+        component: () => import('@/views/refund/index'),
+        meta: { title: 'Refund', icon: 'refund' }
+      },
+      {
+        hidden: true,
+        path: 'refund-detail/:id',
+        name: 'RefundDetail',
+        component: () => import('@/views/refund/detail'),
+        meta: { title: 'Refund Detail' }
+      },
+      {
+        hidden: true,
+        path: 'issue-refund',
+        name: 'IssueRefundDetail',
+        component: () => import('@/views/refund/issue-refund'),
+        meta: { title: 'Issue Refund' }
+      }
+    ]
+  },
+  {
+    path: '/customer',
+    component: Layout,
+    redirect: '/customer',
+    children: [
+      {
+        path: '/customer',
+        name: 'Customer',
+        component: () => import('@/views/customer'),
+        meta: { title: 'Customer', icon: 'customer' }
+      },
+      {
+        hidden: true,
+        path: 'customer-detail/:id',
+        name: 'CustomerDetail',
+        component: () => import('@/views/customer/detail'),
+        meta: { title: 'Customer Detail' }
+      },
+      {
+        hidden: true,
+        path: 'commission/:id',
+        name: 'Commission',
+        component: () => import('@/views/customer/commission'),
+        meta: { title: 'Commission' }
+      }
+    ]
+  },
+
   {
     path: '/nested',
     component: Layout,

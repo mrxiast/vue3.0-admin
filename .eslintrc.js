@@ -46,7 +46,8 @@ module.exports = {
     '@typescript-eslint/no-empty-function': ['off'],
     //can config  to 2 if need more then required
     '@typescript-eslint/no-unused-vars': [1],
-    'no-param-reassign': ['off']
+    'no-param-reassign': ['off'],
+    "prettier/prettier": "off"
   },
   overrides: [
     {

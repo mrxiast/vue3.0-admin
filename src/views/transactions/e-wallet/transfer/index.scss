@@ -1,4 +1,6 @@
-
+.page-title{
+  margin-bottom: 20px;
+}
 .table-box{
   margin-top:20px;
 }
@@ -12,5 +14,16 @@
   }
   span{
     color:#bbb;
+  }
+}
+.filtter-box{
+  display: flex;
+  align-items: center;
+  .input-box{
+    width:300px;
+    margin:0 10px;
+  }
+  .select-box{
+    width: 400px;
   }
 }

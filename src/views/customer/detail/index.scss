@@ -1,0 +1,107 @@
+.page-title{
+  margin-bottom: 20px;
+}
+.top-box{
+  margin:20px 0;
+}
+.title-box{
+  margin-bottom:15px;
+}
+
+.row-box{
+  border:1px solid #eee;
+  margin-bottom:5px;
+}
+.col-title{
+  background-color: #eee;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 45px;
+}
+.other-title{
+  background-color: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.col-content{
+  padding:0 20px;
+  min-height: 45px;
+display: flex;
+flex-wrap: wrap;
+align-items: center;
+}
+.left-item{
+  display: flex;
+  justify-content: center
+}
+.margin15{
+  margin:25px 0;
+}
+.ava{
+  width:150px;
+  height: 150px;
+}
+.default-btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color:#409eff;
+}
+.info-box{
+  display: flex;
+  justify-content: space-around;
+  .info-left{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .info-right{
+    display: flex;
+    align-items: center;
+    .info-item{
+      margin:0 50px;
+      div{
+        text-align: center;
+        margin:20px 0;
+      }
+    }
+  }
+}
+.user-info{
+  div{
+    margin:20px 10px;
+  }
+}
+.tabs{
+  display: flex;
+  .tabs-item{
+    cursor: pointer;
+    margin:0 20px;
+  }
+  .is-select{
+    color:#409eff
+  }
+}
+.tab-content{
+  margin-top:40px;
+}
+.like-a{
+  cursor: pointer;
+  color: #409eff;
+  margin-left:50px;
+}
+.id-pic{
+  width:40px;
+  height:40px;
+}
+.icon-box{
+  margin-left:50px;
+  .icon-style{
+    margin:0 20px;
+    cursor: pointer;
+  }
+}
+

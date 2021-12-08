@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h2 class="page-title">Bill Payments</h2>
+    <h2 class="page-title">Customer Cash Out</h2>
     <div class="top-box">
       <el-card>
         <div class="filtter-box">
@@ -27,7 +27,14 @@
     </div>
     <div class="table-box">
       <el-card>
-        <el-table v-loading="listLoading" :data="tableList" element-loading-text="Loading" border highlight-current-row>
+        <el-table
+          v-loading="listLoading"
+          :data="tableList"
+          element-loading-text="Loading"
+          border
+          highlight-current-row
+          @row-click="goDetail"
+        >
           <el-table-column label="Transaction ID" align="center" width="150px">
             <template #default="scope">
               <el-link type="primary">
@@ -36,15 +43,16 @@
             </template>
           </el-table-column>
           <el-table-column prop="name" label="Transaction Date" align="center" />
-          <el-table-column prop="mobile" label="User Type" align="center" />
-          <el-table-column prop="mobile" label="User Name" align="center" />
+          <el-table-column prop="mobile" label="Customer Name" align="center" />
           <el-table-column prop="agentId" label="Request Amount" align="center" />
           <el-table-column align="center" label="Service Charge"></el-table-column>
           <el-table-column prop="createdAt" label="Total Amount" align="center" />
-          <el-table-column align="center" label="Channel Name"></el-table-column>
-          <el-table-column align="center" label="Biller Catagory"></el-table-column>
-          <el-table-column align="center" label="Biller name"></el-table-column>
+          <el-table-column align="center" label="Payment Catagory"></el-table-column>
+          <el-table-column align="center" label="Payment Option"></el-table-column>
+          <el-table-column align="center" label="Payment Channel"></el-table-column>
           <el-table-column align="center" label="Channel Cost"></el-table-column>
+          <el-table-column align="center" label="Status"></el-table-column>
+          <el-table-column align="center" label="Customer Wallet Balance"></el-table-column>
         </el-table>
         <Pagination :total="total" :page="pageNum" :limit="pageSize" @pagination="changePageFetching" />
       </el-card>
@@ -54,28 +62,35 @@
 
 <script>
 import { defineComponent, reactive, toRefs } from 'vue'
+
 import Pagination from '@/views/components/pagination'
+import { useRouter } from 'vue-router'
 
 export default defineComponent({
   components: { Pagination },
   setup(props, context) {
     const state = reactive({
-      tableList: [],
+      tableList: [{ name: '1' }],
       transactionId: '',
       dateTime: '',
       pageNum: 1,
       pageSize: 10,
       total: 0
     })
+    const $router = useRouter()
     const search = () => {}
     const exportFile = () => {}
     const getList = () => {}
     const changePageFetching = () => {}
+    const goDetail = (row) => {
+      $router.push(`/transactions/cash-out/customer-cash-out-detail/123`)
+    }
     return {
       ...toRefs(state),
       search,
       exportFile,
-      changePageFetching
+      changePageFetching,
+      goDetail
     }
   }
 })

@@ -10,12 +10,12 @@ app.use(store)
 //import 自定义插件
 import plugins from '@/plugins'
 app.use(plugins)
-
 //import element-plus
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
 import EN from 'element-plus/es/locale/lang/en'
 app.use(ElementPlus, { size: 'mini', locale: EN })
+
 
 // import element icon
 import * as ElIconModules from '@element-plus/icons'
