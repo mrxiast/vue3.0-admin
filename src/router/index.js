@@ -261,6 +261,32 @@ export const constantRoutes = [
         meta: { title: 'Commission' }
       }
     ]
+  }, {
+    path: '/merchant',
+    component: Layout,
+    redirect: '/merchant',
+    children: [
+      {
+        path: '/merchant',
+        name: 'Merchant',
+        component: () => import('@/views/merchant'),
+        meta: { title: 'Merchant', icon: 'merchant' }
+      },
+      {
+        hidden: true,
+        path: 'merchant-detail/:id',
+        name: 'MerchantDetail',
+        component: () => import('@/views/merchant/detail'),
+        meta: { title: 'Merchant Detail' }
+      },
+      {
+        hidden: true,
+        path: 'configure/:id',
+        name: 'Configure',
+        component: () => import('@/views/merchant/configure'),
+        meta: { title: 'Configure' }
+      }
+    ]
   },
 
   {
